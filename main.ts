@@ -1,5 +1,8 @@
 scene.onHitWall(SpriteKind.Player, function (sprite, location) {
-    game.splash("STAY IN YA LANE MATE")
+    game.splash(game.ask("STAY IN YA LANE MATE", "I AM IN MY LANE!"))
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, location) {
+    game.gameOver(true)
 })
 let mySprite = sprites.create(img`
     . . . . . . a a c c a a . . . . 
